@@ -1,0 +1,195 @@
+/* css variables */
+:root{
+    --primary:#ddd;
+    --dark:#333;
+    --light:black;
+    --shadow:0 1px 5px rgba(104, 104, 104, 0.8);}
+
+html{ 
+    box-sizing: border-box;
+    font-family: 'Titillium Web';
+    color: var(--dark);
+}
+body{
+    background-color:lightblue;
+    margin: 30px 50px;
+    line-height: 1.4;
+    position: relative;
+    background-repeat: no-repeat;
+}
+.btn{
+    background: gray;
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+}
+img{
+    max-width: 50%;
+    margin: auto;
+}
+.wrapper {display: grid;
+    grid-gap:25px;
+
+}
+/* Navigation  */
+.main-nav ul {
+display:grid;
+grid-gap:25px ;
+padding: 0;
+list-style: none;
+grid-template-columns: repeat(4,1fr);
+}
+.main-nav a {
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align:center ;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+    background: var(--dark);
+    color: var(--light);
+}
+/* Top container */
+
+.top-container {
+display:grid ;
+grid-gap: 30px;
+grid-template-areas: 
+'showcase showcase top-box-a'
+'showcase showcase top-box-b';
+
+}
+.showcase {
+    grid-area: showcase;
+    min-height: 400px;
+    background: url(../img/desert.jpg);
+    background-size: cover;
+    background-position: center; 
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    color:black;
+
+}
+.showcase h1 { font-size: 3.5rem;
+    margin-bottom: 3.5px;
+    color:#A0660D;
+    text-align:center;
+}
+
+.showcase p {
+    font-size: 1.3rem;
+    margin-top: 3em;
+    color:var(--light);
+    }
+/* top box */
+.top-box {
+    background: var(--primary);
+    display: grid;
+   align-items: center;
+   justify-items: center;
+   box-shadow: var(--shadow);
+   padding: 1.5rem;}
+
+.top-box .price {font-size: 2.5rem;
+}
+
+}
+.top-box-a {
+    grid-area: top-box-a;}
+
+.top-box-b {
+            grid-area: top-box-b;
+        }
+        /* Boxes */
+.boxes{
+display: grid;
+grid-gap: 20px;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+.box{background: var(--primary);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow:var(--shadow) ;
+
+        }
+        /* info */
+.info{
+background:transparent;
+box-shadow: var(--shadow);
+display: grid;
+grid-gap: 30px;
+grid-template-columns: repeat(2, 1fr);
+padding:1.5rem;}
+
+
+footer{
+    margin-left:2rem ;
+    background: transparent;
+    color: var(--light);
+    text-align: center;
+    padding: 2rem; }
+
+li{ list-style: none;
+    margin: 10px 10px;
+    display:inline-block;
+    font-size: 50px;
+    padding:25px 25px;
+    color: black;
+    border: transparent;
+    border-radius: 50%;
+    transition: .8s;
+
+}
+li:hover{ color:whitesmoke ;
+    border: 1px solid 292929;
+}
+
+.socialmedia{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform:translate(-55%, -50%);
+
+}
+/* Media Quries  */
+@media(max-width: 700px){ 
+    .top-container{
+        grid-template-areas: 
+        'showcase showcase'
+        'top-box-a top-box-b';
+    }
+    .showcase h1 {
+        font-size: 2.5rem;
+    }
+    .main-nav ul {
+        grid-template-columns: 1fr;
+
+    }
+    .info {
+        grid-template-columns: 1fr;
+
+    }
+    .info .btn{
+        display: block;
+        text-align: center;
+        margin: auto;
+}
+@media (max-width: 500px) {
+    .top-container{
+        grid-template-areas: 
+        'showcase'
+        'top-box-a'
+        'top-box-b';}
+    
+}
